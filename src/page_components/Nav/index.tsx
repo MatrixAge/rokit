@@ -24,8 +24,8 @@ const Index: React.FC = () => {
                   <div className={styles._local}>
                         <div className="link_items w_100 border_box flex flex_column align_center">
                               {
-                                    link_items.map(item => (
-                                          <Link to={item.path}>
+                                    link_items.map((item, index) => (
+                                          <Link to={item.path} key={index}>
                                                 <div className="link_item border_box flex flex_column bg_white transition_normal">
                                                       <div className="img_wrap flex justify_center align_center">
                                                             <img className="img" src={item.img_preview} alt="img_component" />

@@ -12,11 +12,26 @@
       }
 
       code {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-                  monospace;
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
       }
 
-      a:-webkit-any-link{
+      a:-webkit-any-link {
             text-decoration: none;
+      }
+
+      button:active{
+            background-color: #ddd;
+      }
+
+      button{
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            transition: all ease 0.3s;
+            outline: none;
       }
 }

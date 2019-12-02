@@ -23,19 +23,33 @@
       }
 }
 
-.component {
-      transform: scale(0);
-      opacity: 0;
-      animation: show 0.3s forwards;
-      overflow-y: scroll;
-      border: 1px solid @color_border_light;
-      .backdrop_blur();
-}
-
 .component_wrap {
       top: 0;
       left: 0;
       z-index: 1000;
       padding: 60px;
       animation: showin 0.3s forwards;
+}
+
+.component {
+      padding: 30px;
+      transform: scale(0);
+      opacity: 0;
+      animation: show 0.3s forwards;
+      overflow-y: scroll;
+      .backdrop_blur();
+}
+
+.btn_close:hover{
+      box-shadow: 0 0 10px #ddd;
+}
+
+.btn_close{
+      width: 30px;
+      height: 30px;
+      :global{
+            .icon_close{
+                  width: 20px;
+            }
+      }
 }

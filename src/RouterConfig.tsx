@@ -25,10 +25,10 @@ const RouterConfig: React.FC = () => {
       return (
             <Fragment>
                   {
-                        router_config.map((item) => item.exact ?
-                              <Route path={item.path} component={item.component} exact></Route>
+                        router_config.map((item, index) => item.exact ?
+                              <Route path={item.path} component={item.component} key={index} exact></Route>
                               :
-                              <Route path={item.path} component={item.component}></Route>)
+                              <Route path={item.path} component={item.component} key={index}></Route>)
                   }
                   <Redirect from='/*' to='/'></Redirect>
             </Fragment>

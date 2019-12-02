@@ -3,5 +3,7 @@ declare module '*.png|jpg|jpeg' {
 }
 
 declare module '*.less' {
-      export const _local: any
+      const less: any
+
+      export default less
 }
