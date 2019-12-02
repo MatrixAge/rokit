@@ -1,0 +1,36 @@
+@import '../../styles/vars.less';
+
+._local {
+      :global {
+            .link_items {
+                  .link_item:hover {
+                        box-shadow: 0 0 30px #ddd;
+                        transform: scale(1.02);
+                  }
+
+                  .link_item {
+                        width: @width_index_body;
+                        margin-bottom: 40px;
+                        border-radius: @radius_normal;
+                        overflow: hidden;
+                        border: 1px solid @color_border_divide;
+
+                        .img_wrap {
+                              height: 300px;
+                              overflow: hidden;
+
+                              .img {
+                                    max-width: 100%;
+                              }
+                        }
+
+                        .detail {
+
+                              .name {}
+
+                              .description {}
+                        }
+                  }
+            }
+      }
+}

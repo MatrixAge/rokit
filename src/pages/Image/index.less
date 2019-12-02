@@ -1,0 +1,18 @@
+@import '../../styles/vars.less';
+
+._local {
+      :global {
+            .component_wrap {
+                  top: 0;
+                  left: 0;
+                  overflow-y: scroll;
+                  z-index: 1000;
+                  padding: 60px;
+
+                  .component {
+                        background-color: white;
+                        border-radius: @radius_normal;
+                  }
+            }
+      }
+}
