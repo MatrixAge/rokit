@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
 import styles from './index.less'
 
 const Index: React.FC = (props) => {
@@ -23,8 +22,5 @@ const Index: React.FC = (props) => {
       )
 }
 
-Index.propTypes = {
-      children: PropTypes.node
-}
 
 export default Index
