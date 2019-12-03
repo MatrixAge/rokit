@@ -1,41 +1,10 @@
 @import '../../styles/vars.less';
-@import '../../styles/mixin.less';
 
-@keyframes showin {
-      from {
-            background-color: transparent;
+._local{
+      :global{
+            .title_wrap{
+                  padding: 60px 0;
+                  border-bottom: 1px solid @color_border_section;
+            }
       }
-
-      to {
-            background-color: rgba(0, 0, 0, 0.3);
-      }
-}
-
-@keyframes show {
-      from {
-            transform: scale(0);
-            opacity: 0;
-      }
-
-      to {
-            transform: scale(1);
-            opacity: 1;
-      }
-}
-
-.component {
-      transform: scale(0);
-      opacity: 0;
-      animation: show 0.3s forwards;
-      overflow-y: scroll;
-      border: 1px solid @color_border_light;
-      .backdrop_blur();
-}
-
-.component_wrap {
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      padding: 60px;
-      animation: showin 0.3s forwards;
 }

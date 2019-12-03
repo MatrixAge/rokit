@@ -3,12 +3,11 @@ import styles from './index.less'
 
 interface IColumns {
       title: string,
-      dataIndex: string,
       key: string
 }
 
 interface IDataSource {
-      [key: string]: number | string
+      [key: string]: number | string | boolean
 }
 
 interface IProps {
@@ -36,12 +35,12 @@ const Index: React.FC<IProps> = (props) => {
             return (
                   <Fragment>
                         {
-                              dataSource.map((item) => (
-                                    <tr>
+                              dataSource.map((item, index) => (
+                                    <tr key={index}>
                                           {
                                                 Object.keys(item).map(key => {
                                                       return (
-                                                            <td>{item[key]}</td>
+                                                            <td key={key}>{String(item[key])}</td>
                                                       )
                                                 })
                                           }
@@ -57,9 +56,9 @@ const Index: React.FC<IProps> = (props) => {
                   <div className={styles._local}>
                         <table>
                               <thead>
-                                    <th>
+                                    <tr>
                                           <Th></Th>
-                                    </th>
+                                    </tr>
                               </thead>
                               <tbody>
                                     <Tbody></Tbody>

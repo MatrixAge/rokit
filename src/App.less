@@ -3,12 +3,13 @@
 :global {
       body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                  sans-serif;
+            font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             background-color: @color_background;
+            font-size: @fontsize_text;
+            color: black;
+            letter-spacing: 0.6px;
       }
 
       code {
@@ -19,11 +20,11 @@
             text-decoration: none;
       }
 
-      button:active{
+      button:active {
             background-color: #ddd;
       }
 
-      button{
+      button {
             border: none;
             display: flex;
             justify-content: center;
@@ -33,5 +34,9 @@
             margin: 0;
             transition: all ease 0.3s;
             outline: none;
+      }
+
+      .width_index_body {
+            width: @width_index_body;
       }
 }
