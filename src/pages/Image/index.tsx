@@ -5,7 +5,7 @@ import Section from '@/page_components/Section'
 import styles from './index.less'
 
 const Index: React.FC = () => {
-      const columns = [
+      const columns_index = [
             {
                   title: '属性',
                   key: 'attribute'
@@ -28,7 +28,7 @@ const Index: React.FC = () => {
             }
       ]
 
-      const dataSource = [
+      const dataSource_index = [
             {
                   attribute: 'src',
                   type: 'string',
@@ -59,6 +59,40 @@ const Index: React.FC = () => {
             },
       ]
 
+      const columns_mode = [
+            {
+                  title: '值',
+                  key: 'value'
+            },
+            {
+                  title: '说明',
+                  key: 'description'
+            },
+      ]
+
+      const dataSource_mode = [
+            {
+                  value: 'scaleToFill',
+                  description: '缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素'
+            },
+            {
+                  value: 'aspectFit',
+                  description: '缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。'
+            },
+            {
+                  value: 'aspectFill',
+                  description: '缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。'
+            },
+            {
+                  value: 'widthFix',
+                  description: '缩放模式，宽度不变，高度自动变化，保持原图宽高比不变'
+            },
+            {
+                  value: 'top',
+                  description: '裁剪模式，不缩放图片，只显示图片的顶部区域'
+            },
+      ]
+
       return (
             <Container>
                   <div className={styles._local}>
@@ -69,7 +103,10 @@ const Index: React.FC = () => {
                               </div>
                         </div>
                         <Section width="800px" title="API">
-                              <Table columns={columns} dataSource={dataSource}></Table>
+                              <Table columns={columns_index} dataSource={dataSource_index}></Table>
+                        </Section>
+                        <Section width="800px" title="mode">
+                              <Table columns={columns_mode} dataSource={dataSource_mode}></Table>
                         </Section>
                   </div>
             </Container>
