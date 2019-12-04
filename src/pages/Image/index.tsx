@@ -1,4 +1,5 @@
 import React from 'react'
+import Highlight from 'react-highlight.js'
 import Container from '@/page_components/Container'
 import Table from '@/page_components/Table'
 import Section from '@/page_components/Section'
@@ -91,7 +92,46 @@ const Index: React.FC = () => {
                   value: 'top',
                   description: '裁剪模式，不缩放图片，只显示图片的顶部区域'
             },
+            {
+                  value: 'bottom',
+                  description: '裁剪模式，不缩放图片，只显示图片的底部区域'
+            },
+            {
+                  value: 'center',
+                  description: '裁剪模式，不缩放图片，只显示图片的中间区域'
+            },
+            {
+                  value: 'left',
+                  description: '裁剪模式，不缩放图片，只显示图片的左边区域'
+            },
+            {
+                  value: 'right',
+                  description: '裁剪模式，不缩放图片，只显示图片的右边区域'
+            },
+            {
+                  value: 'top left',
+                  description: '裁剪模式，不缩放图片，只显示图片的左上边区域'
+            },
+            {
+                  value: 'top right',
+                  description: '裁剪模式，不缩放图片，只显示图片的右上边区域'
+            },
+            {
+                  value: 'bottom left',
+                  description: '裁剪模式，不缩放图片，只显示图片的左下边区域'
+            },
+            {
+                  value: 'bottom right',
+                  description: '裁剪模式，不缩放图片，只显示图片的右下边区域'
+            },
       ]
+
+      const content = `<Image
+      src={src}
+      mode='scaleToFill'
+      width='300px'
+      height='300px'
+/>`
 
       return (
             <Container>
@@ -102,6 +142,18 @@ const Index: React.FC = () => {
                                     <span className="description color_aaa">图片组件：与web原生的img组件支持的图片格式相同，在此基础上增加图片根据需求展示以及懒加载的功能。</span>
                               </div>
                         </div>
+                        <Section width="800px" title="Demo">
+                              <div className="demo_wrap flex flex_column w_100 border_box">
+                                    <div className="component_wrap w_100 border_box flex">
+
+                                    </div>
+                                    <div className="code_wrap w_100 border_box flex">
+                                          <Highlight language="javascript">
+                                                {content}
+                                          </Highlight>
+                                    </div>
+                              </div>
+                        </Section>
                         <Section width="800px" title="API">
                               <Table columns={columns_index} dataSource={dataSource_index}></Table>
                         </Section>

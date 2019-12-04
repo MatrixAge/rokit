@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './styles/atom.min.less'
+import '@/assets/lib/highlight/highlight.css'
 
 ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))
 
