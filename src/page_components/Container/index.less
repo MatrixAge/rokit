@@ -1,16 +1,6 @@
 @import '../../styles/vars.less';
 @import '../../styles/mixin.less';
 
-@keyframes showin {
-      from {
-            background-color: transparent;
-      }
-
-      to {
-            background-color: rgba(0, 0, 0, 0.1);
-      }
-}
-
 @keyframes show {
       from {
             transform: scale(0);
@@ -28,7 +18,7 @@
       left: 0;
       z-index: 1000;
       padding: 60px;
-      animation: showin 0.3s forwards;
+      background-color: rgba(0, 0, 0, 0.1);
 }
 
 .component {
