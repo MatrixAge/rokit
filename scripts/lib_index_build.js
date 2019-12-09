@@ -6,7 +6,7 @@ process.env.NODE_ENV = 'production'
 require('../config/env')
 
 const webpack = require('webpack')
-const config = require('../config/lib_webpack.config')
+const config = require('../config/lib_index_webpack.config')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
 
 function build (previousFileSizes){
