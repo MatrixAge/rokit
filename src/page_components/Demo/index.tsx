@@ -13,11 +13,11 @@ const Index: React.FC<IProps> = (props) => {
 
       return (
             <Fragment>
-                  <div className="w_100 border_box flex flex_column pl_20 pr_20 bg_whitesmoke" style={{ borderTop: '2px solid black', }}>
-                        <h4 className="color_aaa">{title}</h4>
-                        <div className="color_aaa pb_20">{description}</div>
+                  <div className="w_100 border_box flex flex_column">
+                        <h4 className="black mb_10">{title}</h4>
+                        <div className="black pb_20">{description}</div>
                   </div>
-                  <div className="demo_wrap flex flex_column w_100 border_box mb_30">
+                  <div className="demo_wrap flex flex_column w_100 border_box" style={{ marginBottom: '40px' }}>
                         <div className="component_wrap w_100 border_box flex bg_whitesmoke">
                               {component}
                         </div>

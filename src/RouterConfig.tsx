@@ -1,11 +1,13 @@
-import React, { Fragment } from 'react'
-import { Route, Redirect } from 'react-router-dom'
-import Image from './pages/Image'
+import React, { Fragment, lazy } from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import LazyComponent from '@/page_components/LazyComponent'
 import App from './App'
+
+const Image = lazy(() => import('./pages/Image'))
 
 interface IRouterConfig {
       path: string,
-      component: React.FC,
+      component: any,
       exact?: boolean
 }
 
@@ -24,13 +26,15 @@ const router_config: Array<IRouterConfig> = [
 const RouterConfig: React.FC = () => {
       return (
             <Fragment>
-                  {
-                        router_config.map((item, index) => item.exact ?
-                              <Route path={item.path} component={item.component} key={index} exact></Route>
-                              :
-                              <Route path={item.path} component={item.component} key={index}></Route>)
-                  }
-                  <Redirect from='/*' to='/'></Redirect>
+                  <Switch>
+                        {
+                              router_config.map((item, index) => item.exact ?
+                                    <Route path={item.path} component={item.component} key={index} exact></Route>
+                                    :
+                                    <Route path={item.path} component={LazyComponent(item.component)} key={index}></Route>)
+                        }
+                        <Redirect from='/*' to='/'></Redirect>
+                  </Switch>
             </Fragment>
       )
 }

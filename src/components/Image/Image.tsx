@@ -28,7 +28,7 @@ const Index: React.FC<IProps> = (props) => {
       const container_ref = useRef<HTMLDivElement>(null)
       const img_ref = useRef<HTMLImageElement>(null)
 
-      const initial = (): void => {
+      useEffect(() => {
             let _width: number
             let _height: number
 
@@ -49,20 +49,15 @@ const Index: React.FC<IProps> = (props) => {
 
                   if (current) {
                         if (lazy) {
-
                               let io = new IntersectionObserver((e) => {
                                     const _e = e[e.length - 1]
-
-                                    console.log(e);
 
                                     if (_e.isIntersecting) {
                                           setStateImgSrc(src)
 
-                                          // io.unobserve(current)
+                                          io.unobserve(current)
                                     }
                               })
-
-                              console.log(io);
 
                               io.observe(current)
                         } else {
@@ -88,11 +83,7 @@ const Index: React.FC<IProps> = (props) => {
                         }
                   }
             }
-      }
-
-      useEffect(() => {
-            initial()
-      }, [])
+      }, [height, lazy, mode, src, width])
 
       const style: object = {
             width: width,

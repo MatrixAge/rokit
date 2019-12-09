@@ -407,7 +407,7 @@ const Index: React.FC = () => {
                         <div className="title_wrap w_100 border_box flex justify_center">
                               <div className="title width_index_body flex flex_column">
                                     <h1>Image</h1>
-                                    <span className="description color_aaa">图片组件：与web原生的img组件支持的图片格式相同，在此基础上增加图片根据需求展示以及懒加载的功能。</span>
+                                    <span className="description black">图片组件：与web原生的img组件支持的图片格式相同，在此基础上增加图片根据需求展示以及懒加载的功能。</span>
                               </div>
                         </div>
                         <Section width="800px" title="Demo">
