@@ -8,8 +8,12 @@ require('../config/env')
 const webpack = require('webpack')
 const config = require('../config/lib_webpack.config')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
+const { delDir } = require('../utils/file')
+const { appComponents } = require('../config/paths')
 
 function build (previousFileSizes){
+	delDir(appComponents)
+
 	console.log('building components...')
 
 	const compiler = webpack(config)

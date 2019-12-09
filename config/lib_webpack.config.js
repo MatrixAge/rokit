@@ -1,7 +1,10 @@
 const path = require('path')
 const glob = require('glob')
-
-console.log(path.join(__dirname, '../src/components/**/*.tsx'))
+const isWsl = require('is-wsl')
+const TerserPlugin = require('terser-webpack-plugin')
+const safePostCssParser = require('postcss-safe-parser')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const { appComponents } = require('./paths')
 
 const getComponents = (path) => {
 	const files = glob.sync(path)
@@ -51,7 +54,44 @@ module.exports = [
 		},
 		output: {
 			filename: '[name]/[name].js',
-			path: path.resolve(__dirname, '../lib')
+			path: appComponents
+		},
+		optimization: {
+			minimize: true,
+			minimizer: [
+				new TerserPlugin({
+					terserOptions: {
+						parse: {
+							ecma: 8
+						},
+						compress: {
+							ecma: 5,
+							warnings: false,
+							comparisons: false,
+							inline: 2
+						},
+						mangle: {
+							safari10: true
+						},
+						keep_classnames: false,
+						keep_fnames: false,
+						output: {
+							ecma: 5,
+							comments: false,
+							ascii_only: true
+						}
+					},
+					parallel: !isWsl,
+					cache: true,
+					sourceMap: false
+				}),
+				new OptimizeCSSAssetsPlugin({
+					cssProcessorOptions: {
+						parser: safePostCssParser,
+						map: false
+					}
+				})
+			]
 		}
 	}
 ]
