@@ -1,15 +1,14 @@
-'use strict'
-
-process.env.BABEL_ENV = 'production'
-process.env.NODE_ENV = 'production'
-
-require('../config/env')
-
+const path = require('path')
+const glob = require('glob')
+const fs = require('fs-extra')
 const webpack = require('webpack')
 const config = require('../config/lib_webpack.config')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
+const { appComponents, appComponentsSource } = require('../config/paths')
 
-function build (previousFileSizes){
+const build = () => {
+	fs.emptyDirSync(appComponents)
+
 	console.log('building components...')
 
 	const compiler = webpack(config)
@@ -22,6 +21,7 @@ function build (previousFileSizes){
 				if (!err.message) {
 					return reject(err)
 				}
+
 				messages = formatWebpackMessages({
 					errors: [ err.message ],
 					warnings: []
@@ -38,15 +38,41 @@ function build (previousFileSizes){
 				return reject(new Error(messages.errors.join('\n\n')))
 			}
 
-			console.log('components building success!')
-
 			return resolve({
 				stats,
-				previousFileSizes,
 				warnings: messages.warnings
 			})
 		})
 	})
 }
 
+const copy = () => {
+	// fs.copyFileSync(appComponentsSource + '/index.js', appComponents + '/index.js')
+
+	const copyFiles = (name, target_name) => {
+		const files = glob.sync(path.join(appComponentsSource, `/**/${name}`))
+
+		files.map((item) => {
+			const array_package_path = item.split('/')
+			const package_name = array_package_path[array_package_path.length - 2]
+
+			fs.copyFileSync(item, `${appComponents}/${package_name}/${target_name}`)
+		})
+	}
+
+	copyFiles('index.d.ts', 'index.d.ts')
+	copyFiles('_package.json', 'package.json')
+	copyFiles('readme.md', 'readme.md')
+}
+
 build()
+	.then((res) => {
+		if (res) {
+			copy()
+
+			console.log('components building success!')
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+	})

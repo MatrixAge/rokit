@@ -6,13 +6,19 @@ const safePostCssParser = require('postcss-safe-parser')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { appComponents } = require('./paths')
 
+process.env.BABEL_ENV = 'production'
+process.env.NODE_ENV = 'production'
+
 const getComponents = (path) => {
 	const files = glob.sync(path)
 
 	let entry = {}
 
 	files.map((item) => {
-		entry[item.substr(-15, 5)] = item
+		const array_package_path = item.split('/')
+		const package_name = array_package_path[array_package_path.length - 2]
+
+		entry[package_name] = item
 	})
 
 	return entry
@@ -20,13 +26,18 @@ const getComponents = (path) => {
 
 module.exports = [
 	{
+		mode: 'production',
 		entry: getComponents(path.resolve(__dirname, '../src/components/**/index.tsx')),
 		target: 'web',
 		module: {
 			rules: [
 				{
 					test: /\.(ts|tsx)$/,
-					use: 'ts-loader',
+					use: [
+						{
+							loader: 'babel-loader'
+						}
+					],
 					exclude: /node_modules/
 				},
 				{
@@ -52,9 +63,13 @@ module.exports = [
 		resolve: {
 			extensions: [ '.tsx', '.ts', '.js' ]
 		},
+		externals: {
+			react: 'react'
+		},
 		output: {
-			filename: '[name]/[name].js',
-			path: appComponents
+			filename: '[name]/index.js',
+			path: appComponents,
+			libraryTarget: 'commonjs2'
 		},
 		optimization: {
 			minimize: true,

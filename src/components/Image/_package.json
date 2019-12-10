@@ -1,0 +1,28 @@
+{
+      "name": "rokit-image",
+      "version": "1.0.22",
+      "description": "image component of rokit,inspire by miniapp image component.",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+            "type": "git",
+            "url": "git+https://github.com/MatrixAge/rokit.git"
+      },
+      "keywords": [
+            "react",
+            "component",
+            "js",
+            "rokit",
+            "miniapp",
+            "wxapp"
+      ],
+      "author": "matrixage",
+      "license": "MIT",
+      "bugs": {
+            "url": "https://github.com/MatrixAge/rokit/issues"
+      },
+      "homepage": "https://github.com/MatrixAge/rokit#readme"
+}

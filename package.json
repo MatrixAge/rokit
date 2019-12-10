@@ -17,7 +17,6 @@
             "@typescript-eslint/parser": "^2.2.0",
             "babel-eslint": "10.0.3",
             "babel-jest": "^24.9.0",
-            "babel-loader": "8.0.6",
             "babel-plugin-named-asset-import": "^0.3.4",
             "babel-preset-react-app": "^9.0.2",
             "camelcase": "^5.2.0",
@@ -59,6 +58,7 @@
             "react-router-dom": "^5.1.2",
             "resolve": "1.12.0",
             "resolve-url-loader": "3.1.0",
+            "rokit-image": "^1.0.22",
             "sass-loader": "7.2.0",
             "semver": "6.3.0",
             "terser-webpack-plugin": "1.4.1",
@@ -74,7 +74,6 @@
             "start": "node scripts/start.js",
             "build": "node scripts/build.js",
             "build:lib": "node scripts/lib_build.js",
-            "build:lib_index": "node scripts/lib_index_build.js",
             "test": "node scripts/test.js"
       },
       "eslintConfig": {
@@ -142,10 +141,14 @@
       },
       "babel": {
             "presets": [
-                  "react-app"
+                  "react-app",
+                  "@babel/typescript"
             ]
       },
       "devDependencies": {
+            "@babel/preset-typescript": "^7.7.4",
+            "awesome-typescript-loader": "^5.2.1",
+            "babel-loader": "^8.0.6",
             "css-loader": "^2.1.1",
             "glob": "^7.1.6",
             "less": "^3.10.3",
