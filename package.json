@@ -2,10 +2,10 @@
       "name": "rokit",
       "version": "0.1.0",
       "private": false,
+      "homepage": ".",
       "workspaces": [
             "packages/*"
       ],
-      "homepage": "https://matrixage.github.io/rokit",
       "dependencies": {
             "@babel/core": "7.6.0",
             "@svgr/webpack": "4.3.2",
@@ -66,7 +66,7 @@
             "semver": "6.3.0",
             "terser-webpack-plugin": "1.4.1",
             "ts-pnp": "1.1.4",
-            "typescript": "^3.7.2",
+            "typescript": "^3.7.0",
             "url-loader": "2.1.0",
             "webpack": "4.41.0",
             "webpack-dev-server": "3.2.1",
