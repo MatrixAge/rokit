@@ -5,7 +5,7 @@
       "workspaces": [
             "packages/*"
       ],
-      "homepage": "https://github.com/MatrixAge/rokit",
+      "homepage": "https://matrixage.github.io/rokit",
       "dependencies": {
             "@babel/core": "7.6.0",
             "@svgr/webpack": "4.3.2",
