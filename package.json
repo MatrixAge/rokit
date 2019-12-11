@@ -2,7 +2,7 @@
       "name": "rokit",
       "version": "0.1.0",
       "private": false,
-      "homepage": ".",
+      "homepage": "https://github.com/MatrixAge/rokit",
       "workspaces": [
             "packages/*"
       ],
