@@ -4,7 +4,6 @@ import Table from '@/page_components/Table'
 import Section from '@/page_components/Section'
 import Demo from '@/page_components/Demo'
 import Image from '@/components/Image'
-// import Image from 'rokit-image'
 import styles from './index.less'
 import img_src from '@/assets/images/img_preview_Image.jpg'
 

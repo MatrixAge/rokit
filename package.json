@@ -61,7 +61,7 @@
             "react-router-dom": "^5.1.2",
             "resolve": "1.12.0",
             "resolve-url-loader": "3.1.0",
-            "rokit-image": "^1.0.22",
+            "rokit-image": "^1.1.1",
             "sass-loader": "7.2.0",
             "semver": "6.3.0",
             "terser-webpack-plugin": "1.4.1",
