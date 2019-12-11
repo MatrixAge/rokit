@@ -3,14 +3,10 @@ import Container from '@/page_components/Container'
 import Table from '@/page_components/Table'
 import Section from '@/page_components/Section'
 import Demo from '@/page_components/Demo'
-// import Image from '@/components/Image'
-import Image from 'rokit-image'
+import Image from '@/components/Image'
+// import Image from 'rokit-image'
 import styles from './index.less'
-// import img_src from '@/assets/images/img_preview_Image.jpg'
-
-console.log(Image);
-
-const img_src = 'https://s2.ax1x.com/2019/12/05/Q3hl7V.jpg'
+import img_src from '@/assets/images/img_preview_Image.jpg'
 
 const columns_index = [
       {
@@ -388,7 +384,7 @@ const demo = [
             title: `mode="bottomRight"`,
             description: dataSource_mode[14].description,
             component: <Image
-                  src='http://static-qn.jxiaolu.com/Fg_16RlVltmDuxSJT1jwiMeGEvC-'
+                  src={img_src}
                   width='100%'
                   height='400px'
                   mode="bottomRight"
