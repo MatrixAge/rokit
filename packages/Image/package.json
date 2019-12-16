@@ -1,6 +1,6 @@
 {
       "name": "rokit-image",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "description": "image component of rokit,inspire by miniapp image component.",
       "main": "index.js",
       "types": "index.d.ts",
