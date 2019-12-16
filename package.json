@@ -7,6 +7,18 @@
             "type": "git",
             "url": "git+https://github.com/MatrixAge/rokit.git"
       },
+      "bugs": {
+            "url": "https://github.com/MatrixAge/rokit/issues"
+      },
+      "author": "matrixage",
+      "keywords": [
+            "react",
+            "component",
+            "js",
+            "rokit",
+            "miniapp",
+            "wxapp"
+      ],
       "workspaces": [
             "packages/*"
       ],

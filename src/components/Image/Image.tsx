@@ -116,4 +116,4 @@ const Index: React.FC<IProps> = (props) => {
       )
 }
 
-export default Index
+export default React.memo(Index) 
