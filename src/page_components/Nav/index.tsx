@@ -12,7 +12,7 @@ interface ILinkItem {
 const link_items: Array<ILinkItem> = [
       {
             path: 'Image',
-            img_preview: require(`../../assets/images/img_preview_Image.jpg`),
+            img_preview: require(`@/assets/images/img_preview_Image.jpg`),
             name: 'Image',
             description: '用于展示图片，组件灵感来源于小程序image组件'
       }

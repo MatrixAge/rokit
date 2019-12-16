@@ -3,15 +3,37 @@
 ._local {
       :global {
             .header_wrap {
-                  margin-top: 80px;
-                  margin-bottom: 30px;
+                  margin-top: 60px;
+                  margin-bottom: 20px;
 
                   .header {
                         width: @width_index_body;
 
-                        .name {
-                              font-size: 36px;
-                              font-weight: bold;
+                        .left:hover {
+                              .logo {
+                                    transform: scale(1);
+                              }
+
+                              .name {
+                                    margin-left: 0;
+                              }
+                        }
+
+                        .left {
+                              .logo {
+                                    max-width: 50px;
+                                    transform: scale(0);
+                              }
+
+                              .name {
+                                    font-size: 36px;
+                                    font-weight: bold;
+                                    margin-left: -60px;
+                              }
+                        }
+
+                        .icon_github {
+                              max-width: 30px;
                         }
                   }
             }

@@ -17,7 +17,7 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      padding: 60px;
+      // padding: 60px;
       background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -30,8 +30,8 @@
 }
 
 .btn_close {
-      top: 60px;
-      right: 60px;
+      top: 30px;
+      right: 30px;
       width: 30px;
       height: 30px;
       z-index: 1001;
@@ -44,6 +44,22 @@
 
       :global {
             .icon_close {
+                  width: 20px;
+            }
+      }
+}
+
+.btn_backtop {
+      right: 30px;
+      bottom: 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 1001;
+      border-left: 1px solid @color_border_light;
+      border-bottom: 1px solid @color_border_light;
+
+      :global {
+            .icon_backtop {
                   width: 20px;
             }
       }
