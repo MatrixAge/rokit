@@ -7,3 +7,7 @@ declare module '*.less' {
 
       export default less
 }
+
+declare module '@/utils' {
+      export const throttle: any
+}

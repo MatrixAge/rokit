@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { throttle } from '@/utils'
 import styles from './index.less'
 
 import icon_close from '@/assets/icons/icon_close.svg'
@@ -10,7 +11,7 @@ const Index: React.FC = (props) => {
 
       let container: HTMLDivElement | null
 
-      const onScrollContainer = () => {
+      const onScrollContainer = throttle(() => {
             if (container) {
                   if (container.scrollTop > 1200) {
                         setStateBacktop(true)
@@ -18,7 +19,7 @@ const Index: React.FC = (props) => {
                         setStateBacktop(false)
                   }
             }
-      }
+      }, 1000)
 
       const onBacktop = () => {
             if (container) {
