@@ -17,7 +17,6 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      // padding: 60px;
       background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -55,6 +54,7 @@
       width: 30px;
       height: 30px;
       z-index: 1001;
+      background-color: white;
       border-left: 1px solid @color_border_light;
       border-bottom: 1px solid @color_border_light;
 
@@ -62,5 +62,17 @@
             .icon_backtop {
                   width: 20px;
             }
+      }
+}
+
+@media screen and (max-width:1000px) {
+      .btn_close {
+            top:16px;
+            right:16px;
+      }
+
+      .btn_backtop {
+            right:16px;
+            bottom:16px;
       }
 }

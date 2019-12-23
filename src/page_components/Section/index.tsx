@@ -1,20 +1,20 @@
 import React, { Fragment } from 'react'
+import styles from './index.less'
 
 interface IProps {
-      width: string,
       title: string | React.ReactNode
 }
 
 const Index: React.FC<IProps> = (props) => {
-      const { width, title } = props
+      const { title } = props
 
       return (
             <Fragment>
-                  <div className="section_wrap w_100 flex justify_center pt_30">
-                        <div className="section overflow_xhidden" style={{ width: width }}>
+                  <div className={`${styles._local} w_100 flex justify_center pt_30`}>
+                        <section className="section overflow_xhidden">
                               <h2>{title}</h2>
                               {props.children}
-                        </div>
+                        </section>
                   </div>
             </Fragment>
       )

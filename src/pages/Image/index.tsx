@@ -409,20 +409,20 @@ const Index: React.FC = () => {
                                     <span className="description black">图片组件：与web原生的img组件支持的图片格式相同，在此基础上增加图片根据需求展示以及懒加载的功能。</span>
                               </div>
                         </div>
-                        <Section width="800px" title="Install">
+                        <Section title="Install">
                               <div className="code_wrap w_100 border_box flex pl_30 pr_30 bg_black">
                                     <Highlight language="javascriptreact">
                                           {`npm i rokit-image`}
                                     </Highlight>
                               </div>
                         </Section>
-                        <Section width="800px" title="API">
+                        <Section title="API">
                               <Table columns={columns_index} dataSource={dataSource_index}></Table>
                         </Section>
-                        <Section width="800px" title="mode">
+                        <Section title="mode">
                               <Table columns={columns_mode} dataSource={dataSource_mode}></Table>
                         </Section>
-                        <Section width="800px" title="Demo">
+                        <Section title="Demo">
                               {
                                     demo.map((item, index) => (
                                           <Demo

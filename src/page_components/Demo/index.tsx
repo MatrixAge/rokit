@@ -21,7 +21,7 @@ const Index: React.FC<IProps> = (props) => {
                         <div className="component_wrap w_100 border_box flex bg_whitesmoke">
                               {component}
                         </div>
-                        <div className="code_wrap w_100 border_box flex pl_30 pr_30 bg_black">
+                        <div className="code_wrap w_100 border_box flex pl_30 pr_30 bg_black" style={{ overflowX: 'scroll' }}>
                               <Highlight language="javascriptreact">
                                     {`${code}`}
                               </Highlight>

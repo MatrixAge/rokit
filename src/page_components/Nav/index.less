@@ -2,7 +2,6 @@
 
 ._local {
       :global {
-
             .link_items {
                   .link_item:hover {
                         box-shadow: 0 0 30px #ddd;
@@ -14,21 +13,25 @@
                         margin-bottom: 40px;
                         overflow: hidden;
                         border: 1px solid @color_border_divide;
+                  }
 
-                        .img_wrap {
-                              height: 300px;
-                              overflow: hidden;
+                  @media screen and (max-width:1000px) {
+                        .link_item {
+                              width: @width_index_body_mobile;
 
-                              .img {
-                                    max-width: 100%;
+                              .detail {
+                                    padding: 20px;
+
+                                    .name {
+                                          line-height: 1;
+                                          margin-bottom: 10px;
+                                          font-size: 24px;
+                                    }
+
+                                    .description {
+                                          font-size: 12px;
+                                    }
                               }
-                        }
-
-                        .detail {
-
-                              .name {}
-
-                              .description {}
                         }
                   }
             }
