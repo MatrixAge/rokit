@@ -48,7 +48,7 @@ const Index: React.FC<IProps> = (props) => {
                   }
 
                   if (current) {
-                        if (lazy) {
+                        if (lazy && IntersectionObserver) {
                               let io = new IntersectionObserver((e) => {
                                     const _e = e[e.length - 1]
 
