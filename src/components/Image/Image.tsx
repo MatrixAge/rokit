@@ -34,7 +34,7 @@ const Index: React.FC<IProps> = (props) => {
 
             const { current } = img_ref
 
-            if (width && height && container_ref.current) {
+            if (document && width && height && container_ref.current) {
                   if (width === '100%') {
                         _width = container_ref.current.offsetWidth
                   } else {
