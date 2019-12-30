@@ -96,6 +96,7 @@ const Index: React.FC<IProps> = (props) => {
             <div
                   ref={container_ref}
                   className={`${styles._local}`}
+                  style={{ width: width === '100%' ? '100%' : 'auto' }}
             >
                   <div
                         className={`${mode}`}
