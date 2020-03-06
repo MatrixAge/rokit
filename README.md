@@ -1,13 +1,13 @@
-### install
+# install
 
 ## Image component
 
 `npm i @matrixage/rokit-image`
 
-### issues
+# issues
 
 [publish issues in here](https://github.com/MatrixAge/rokit/issues)
 
-### license
+# license
 
 MIT.
