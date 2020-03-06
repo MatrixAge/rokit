@@ -1,6 +1,6 @@
 ### install
 
-##Image component
+## Image component
 
 `npm i @matrixage/rokit-image`
 
