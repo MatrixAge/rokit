@@ -1,6 +1,8 @@
 ### install
 
-`npm i --save rokit-image`
+##Image component
+
+`npm i @matrixage/rokit-image`
 
 ### issues
 
